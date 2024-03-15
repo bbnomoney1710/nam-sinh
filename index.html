@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập năm sinh</title>
+</head>
+<body>
+
+<h2>Nhập năm sinh của bạn</h2>
+<input type="text" id="namSinhInput" placeholder="Nhập năm sinh...">
+<button onclick="checkAge()">Kiểm tra</button>
+
+<script>
+    function checkAge() {
+        var namSinh = document.getElementById("namSinhInput").value;
+        namSinh = parseInt(namSinh);
+        if (isNaN(namSinh)) {
+            alert("Vui lòng nhập một năm hợp lệ!");
+        } else {
+            var tuoi = new Date().getFullYear() - namSinh;
+            if (tuoi > 18) {
+                alert("Bạn đã đủ tuổi.");
+            } else {
+                alert("Bạn chưa đủ tuổi.");
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
